@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>난이도 TOP10</title>
+<style>
+    body {
+        font-family: "Pretendard", sans-serif;
+        background: #f5f7fb;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 상단 이전 버튼 */
+ .back-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 5px 10px;   /* ← 여기 줄이면 버튼이 더 짧아짐 */
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    width:200px;
+}
+
+.back-btn:hover {
+    background: #e8e9eb;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+
+    .container {
+        width: 92%;
+        max-width: 1050px;
+        margin: 0 auto 60px auto;
+        text-align: center;
+    }
+
+    .page-title {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .page-title h2 {
+        font-size: 25px;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    /* 박스 3칸 가로 배치 */
+    .subject-grid {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    /* 박스 디자인 */
+    .subject-box {
+        background: #ffffff;
+        padding: 20px 22px;
+        border-radius: 18px;
+        width: 33%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: left;
+    }
+
+    .subject-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 8px;
+    }
+
+    .test-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 4px;
+        border-bottom: 1px solid #f1f1f1;
+        font-size: 14px;
+    }
+
+    .test-item:last-child {
+        border-bottom: none;
+    }
+  .back-btn {
+    display: block;
+    margin: 30px auto 0 auto;   /* 중앙 정렬 + 위쪽 여백 */
+    padding: 12px 26px;
+    background: #f3f4f6;        /* 연한 회색 배경 */
+    border-radius: 10px;        /* 둥근 모서리 */
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;                /* 진한 회색 텍스트 */
+    text-decoration: none;
+    border: 1px solid #e2e2e2;  /* 아주 얇은 연한 테두리 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.07); /* 은은한 그림자 */
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover 시 더 선명해지는 효과 */
+.back-btn:hover {
+    background: #e8e9eb;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+</style>
+</head>
+<body>
+
+<!-- 🔥 버튼은 박스 위에 고정 -->
+<div class="container">
+
+    <div class="page-title">
+        <h2>역대 고3 한국사 난이도 TOP10</h2>
+    </div>
+
+    <!-- 3개 박스 -->
+    <div class="subject-grid">
+
+  
+        <div class="subject-box">
+            <div class="subject-title">한국사 TOP10</div>
+
+            <div class="test-item"><div>1위 — 2024학평 9월</div><div>상</div></div>
+            <div class="test-item"><div>2위 — 2023 수능</div><div>상</div></div>
+            <div class="test-item"><div>3위 — 2022 수능</div><div>중상</div></div>
+            <div class="test-item"><div>4위 — 2021학평 9월</div><div>중상</div></div>
+            <div class="test-item"><div>5위 — 2020학평 6월</div><div>중</div></div>
+            <div class="test-item"><div>6위 — 2019 수능</div><div>중</div></div>
+            <div class="test-item"><div>7위 — 2018 수능</div><div>중하</div></div>
+            <div class="test-item"><div>8위 — 2017학평 9월</div><div>중하</div></div>
+            <div class="test-item"><div>9위 — 2016 수능</div><div>보통</div></div>
+            <div class="test-item"><div>10위 — 2015학평 6월</div><div>보통</div></div>
+
+        
+        </div>
+    
+        
+
+        
+        </div>
+      
+
+        <!-- 확률과 통계 -->
+    
+       
+
+
+
+    </div>
+    <a class="back-btn" href="index.html">← 이전 화면으로 돌아가기</a>
+
+
+</div>
+</body>
+</html>
