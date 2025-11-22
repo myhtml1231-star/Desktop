@@ -38,13 +38,13 @@
         color: #2d2f33;
     }
 
-    /* 다운로드 박스 전체 */
-    .box-container {
+    /* 2열 그리드 컨테이너 */
+    .grid-container {
         width: 92%;
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 18px;
     }
 
@@ -76,8 +76,9 @@
 
     /* 뒤로가기 버튼 */
     .back-btn {
-        margin-top: 35px;
-        display: inline-block;
+        margin: 35px auto 0;
+        display: block;
+        width: fit-content;
         padding: 12px 24px;
         background: #f0f0f0;
         border-radius: 10px;
@@ -87,7 +88,6 @@
         font-weight: 600;
         border: 1px solid #ddd;
         transition: 0.2s;
-        text-align: center;
     }
 
     .back-btn:hover {
@@ -105,51 +105,46 @@
 </div>
 
 <!-- 제목 -->
-<div class="title">2021학년도 고3 수능 국어 — 다운로드</div>
+<div class="title">2022학년도 고3 6월 국어(화법과작문) — 다운로드</div>
 
-<!-- 6개 다운로드 버튼 -->
-<div class="box-container">
+<!-- 2열(왼쪽3 오른쪽3) -->
+<div class="grid-container">
 
-    <!-- 문제지 1 -->
-    <a class="download-box" href="2021-s-공통.pdf" download>
-        문제지 (버전 1)
-        <span>PDF 다운로드</span>
+    <!-- 왼쪽 1 -->
+    <a class="download-box" href="2021-6-공통.pdf" download>
+        문제지(공통만)
+        <span>PDF</span>
     </a>
 
-    <!-- 문제지 2 -->
-    <a class="download-box" href="2021-s-화작-2.pdf" download>
-        문제지 (버전 2)
-        <span>PDF 다운로드</span>
+    <!-- 오른쪽 1 -->
+    <a class="download-box" href="2021-s-국어.pdf" download>
+        문제지(전체)
+        <span>PDF</span>
     </a>
 
-    <!-- 정답지 1 -->
-    <a class="download-box" href="2022-6-국어.pdf" download>
-        정답지 (버전 1)
-        <span>PDF 다운로드</span>
+    <!-- 왼쪽 2 -->
+    <a class="download-box" href="2021-s.pdf" download>
+        정답지
+        <span>PDF</span>
     </a>
 
-    <!-- 정답지 2 -->
-    <a class="download-box" href="2022-6-국어-2.pdf" download>
-        정답지 (버전 2)
-        <span>PDF 다운로드</span>
+
+    <!-- 왼쪽 3 -->
+    <a class="download-box" href="2021-s-공통'.pdf" download>
+        해설지(공통만)
+        <span>PDF</span>
     </a>
 
-    <!-- 해설지 1 -->
-    <a class="download-box" href="2022-6-화작해설.pdf" download>
-        해설지 (버전 1)
-        <span>PDF 다운로드</span>
+    <!-- 오른쪽 3 -->
+    <a class="download-box" href="2021-s-국어'.pdf" download>
+        해설지(전체)
+        <span>PDF</span>
     </a>
-
-    <!-- 해설지 2 -->
-    <a class="download-box" href="2022-6-화작해설-2.pdf" download>
-        해설지 (버전 2)
-        <span>PDF 다운로드</span>
-    </a>
-
-    <!-- 뒤로가기 -->
-    <a class="back-btn" href="2022_6.html">← 이전 화면으로 돌아가기</a>
 
 </div>
+
+<!-- 뒤로가기 -->
+<a class="back-btn" href="2021_s.html">← 이전 화면으로 돌아가기</a>
 
 </body>
 </html>
