@@ -11,7 +11,6 @@
       background: #fafafa;
     }
 
-    /* 중앙 전체 컨테이너 */
     .container {
       width: 100%;
       max-width: 900px;
@@ -20,7 +19,6 @@
       text-align: center;
     }
 
-    /* 타이틀 */
     .title {
       font-size: 38px;
       font-weight: 900;
@@ -28,7 +26,6 @@
       color: #333;
     }
 
-    /* 현대적 6분할 그리드 */
     .subject-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -37,7 +34,7 @@
     }
 
     .subject-item {
-      position: relative; /* dropdown 위치를 위해 필요 */
+      position: relative;
     }
 
     .subject-box {
@@ -65,7 +62,6 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
-    /* 드롭다운 (초기 숨김) */
     .dropdown {
       display: none;
       position: absolute;
@@ -98,12 +94,10 @@
       transform: translateY(-2px);
     }
 
-    /* 표시 상태 클래스 */
     .subject-item.open .dropdown {
       display: block;
     }
 
-    /* 화살표 표시 (디자인 변경 없이 미미한 표시) */
     .subject-box .caret {
       margin-left: 8px;
       font-size: 16px;
@@ -111,7 +105,6 @@
       transform: translateY(1px);
     }
 
-    /* 뒤로가기 버튼 */
     .back-btn {
       margin-top: 50px;
       display: inline-block;
@@ -131,7 +124,6 @@
       transform: translateY(-2px);
     }
 
-    /* 간단한 반응형 — 레이아웃 본래 디자인을 유지하도록 보수적으로 적용 */
     @media (max-width: 720px) {
       .subject-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
       .subject-box { padding: 36px 8px; font-size: 20px; }
@@ -154,82 +146,75 @@
 
   <div class="subject-grid">
 
-    <!-- 고3(복합) 예시: 국어 (언어와매체 / 독서/문학/화법작문 등) -->
-     <div class="subject-item">
-     <a class="download-box" href="2021-9-국어.pdf" download>국어</a>
-    </div>
-      
-       
-    
-      </div>
+    <!-- 국어 (드롭다운 아님, 단일 다운로드) -->
+    <div class="subject-item">
+      <a class="subject-box" href="2021-9-국어.pdf" download>국어</a>
     </div>
 
-    <!-- 수학: 확률과통계 / 미적분 / 기하 -->
+    <!-- 수학 -->
     <div class="subject-item" data-subject="math">
       <div class="subject-box" role="button" aria-expanded="false" tabindex="0">
         수학 <span class="caret">▾</span>
       </div>
       <div class="dropdown" aria-hidden="true">
-        <a href="downloads/2026_math_stat.pdf" download>확률과통계</a>
-        <a href="downloads/2026_math_calc.pdf" download>미적분</a>
-        <a href="downloads/2026_math_geo.pdf" download>기하</a>
+        <a href="downloads/math_stat.pdf" download>확률과통계</a>
+        <a href="downloads/math_calc.pdf" download>미적분</a>
+        <a href="downloads/math_geo.pdf" download>기하</a>
       </div>
     </div>
 
-    <!-- 영어: 단일 파일(예시) -->
+    <!-- 영어 -->
     <div class="subject-item">
-      <a class="subject-box" href="downloads/2026_english.pdf" download>영어</a>
+      <a class="subject-box" href="downloads/english.pdf" download>영어</a>
     </div>
 
-    <!-- 한국사: 단일 파일 -->
+    <!-- 한국사 -->
     <div class="subject-item">
-      <a class="subject-box" href="downloads/2026_korean_history.pdf" download>한국사</a>
+      <a class="subject-box" href="downloads/korean_history.pdf" download>한국사</a>
     </div>
 
-    <!-- 사회탐구: 여러 과목 -->
+    <!-- 사회탐구 -->
     <div class="subject-item" data-subject="social">
       <div class="subject-box" role="button" aria-expanded="false" tabindex="0">
         사회탐구 <span class="caret">▾</span>
       </div>
       <div class="dropdown" aria-hidden="true">
-        <a href="downloads/2026_social_ethics.pdf" download>윤리와사상</a>
-        <a href="downloads/2026_social_politics.pdf" download>정치와법</a>
-        <a href="downloads/2026_social_econ.pdf" download>경제</a>
-        <a href="downloads/2026_social_soc.pdf" download>사회문화</a>
-        <a href="downloads/2026_social_history.pdf" download>세계사</a>
-        <a href="downloads/2026_social_geo.pdf" download>한국지리</a>
-        <a href="downloads/2026_social_ethics.pdf" download>생활과윤리</a>
-        <a href="downloads/2026_social_ethics.pdf" download>동아시아사</a>
-        <a href="downloads/2026_social_ethics.pdf" download>세계지리</a>
+        <a href="downloads/social_ethics.pdf" download>윤리와사상</a>
+        <a href="downloads/social_politics.pdf" download>정치와법</a>
+        <a href="downloads/social_econ.pdf" download>경제</a>
+        <a href="downloads/social_soc.pdf" download>사회문화</a>
+        <a href="downloads/social_world_history.pdf" download>세계사</a>
+        <a href="downloads/social_kgeo.pdf" download>한국지리</a>
+        <a href="downloads/social_life_ethics.pdf" download>생활과윤리</a>
+        <a href="downloads/social_eastasia.pdf" download>동아시아사</a>
+        <a href="downloads/social_world_geo.pdf" download>세계지리</a>
       </div>
     </div>
 
-    <!-- 과학탐구: 여러 과목 -->
+    <!-- 과학탐구 -->
     <div class="subject-item" data-subject="science">
       <div class="subject-box" role="button" aria-expanded="false" tabindex="0">
         과학탐구 <span class="caret">▾</span>
       </div>
       <div class="dropdown" aria-hidden="true">
-        <a href="downloads/2026_sci_physics.pdf" download>물리학I</a>
-        <a href="downloads/2026_sci_chemistry.pdf" download>화학I</a>
-        <a href="downloads/2026_sci_biology.pdf" download>생명과학I</a>
-        <a href="downloads/2026_sci_earth.pdf" download>지구과학I</a>
-        <a href="downloads/2026_sci_physics.pdf" download>물리학II</a>
-        <a href="downloads/2026_sci_chemistry.pdf" download>화학II</a>
-        <a href="downloads/2026_sci_biology.pdf" download>생명과학II</a>
-        <a href="downloads/2026_sci_earth.pdf" download>지구과학II</a>
+        <a href="downloads/sci_physics1.pdf" download>물리학 I</a>
+        <a href="downloads/sci_chem1.pdf" download>화학 I</a>
+        <a href="downloads/sci_bio1.pdf" download>생명과학 I</a>
+        <a href="downloads/sci_earth1.pdf" download>지구과학 I</a>
+        <a href="downloads/sci_physics2.pdf" download>물리학 II</a>
+        <a href="downloads/sci_chem2.pdf" download>화학 II</a>
+        <a href="downloads/sci_bio2.pdf" download>생명과학 II</a>
+        <a href="downloads/sci_earth2.pdf" download>지구과학 II</a>
       </div>
     </div>
 
   </div>
 
-  <!-- 뒤로가기 버튼 -->
   <a class="back-btn" href="index.html">← 이전 화면으로 돌아가기</a>
 
 </div>
 
 <script>
-  // 토글 동작: 클릭, 키보드(Enter/Space) 지원, 외부 클릭으로 닫기
   (function () {
     const items = document.querySelectorAll('.subject-item');
 
@@ -249,26 +234,23 @@
       const box = item.querySelector('.subject-box');
       const dropdown = item.querySelector('.dropdown');
 
-      // subject-box가 앵커(a)인 경우(직접 링크)에는 토글 비활성
-      if (!box) return;
+      // 드롭다운 없는 박스(국어/영어/한국사 등)는 스킵
+      if (!dropdown) return;
 
-      // 클릭 토글
-      box.addEventListener('click', (e) => {
-        // 만약 내부에 실제 링크(a.subject-box)를 사용하고 싶다면 이 부분 조정
-        const isOpen = item.classList.contains('open');
-        if (isOpen) {
+      box.addEventListener('click', () => {
+        const opened = item.classList.contains('open');
+        if (opened) {
           item.classList.remove('open');
           box.setAttribute('aria-expanded', 'false');
-          if (dropdown) dropdown.setAttribute('aria-hidden', 'true');
+          dropdown.setAttribute('aria-hidden', 'true');
         } else {
           closeAll(item);
           item.classList.add('open');
           box.setAttribute('aria-expanded', 'true');
-          if (dropdown) dropdown.setAttribute('aria-hidden', 'false');
+          dropdown.setAttribute('aria-hidden', 'false');
         }
       });
 
-      // 키보드 접근성: Enter / Space 로 열기
       box.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -276,25 +258,14 @@
         }
       });
 
-      // 드롭다운 내부에서 링크 클릭 시 자동으로 닫히도록
-      if (dropdown) {
-        dropdown.addEventListener('click', (e) => {
-          const target = e.target;
-          if (target.tagName.toLowerCase() === 'a') {
-            // 다운로드 링크 클릭했을 때 UI 닫기(브라우저가 다운로드를 처리함)
-            closeAll();
-          }
-        });
-      }
+      dropdown.addEventListener('click', () => closeAll());
     });
 
-    // 외부 클릭 시 모두 닫기
     document.addEventListener('click', (e) => {
-      const isInside = e.target.closest('.subject-item');
-      if (!isInside) closeAll();
+      const inside = e.target.closest('.subject-item');
+      if (!inside) closeAll();
     });
 
-    // ESC 키로 닫기
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeAll();
     });
@@ -304,4 +275,3 @@
 
 </body>
 </html>
-
