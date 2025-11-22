@@ -38,7 +38,7 @@
         color: #2d2f33;
     }
 
-    /* 2열 그리드 컨테이너 */
+    /* 2열 그리드 */
     .grid-container {
         width: 92%;
         max-width: 700px;
@@ -46,6 +46,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 18px;
+    }
+
+    /* 정답지 전용 - 2칸 차지 */
+    .full-width {
+        grid-column: span 2;
     }
 
     /* 단일 박스 */
@@ -105,37 +110,34 @@
 </div>
 
 <!-- 제목 -->
-<div class="title">2022학년도 고3 6월 국어(화법과작문) — 다운로드</div>
+<div class="title">2021학년도 고3 6월 국어 — 다운로드</div>
 
-<!-- 2열(왼쪽3 오른쪽3) -->
+<!-- 2-1-2 구조 -->
 <div class="grid-container">
 
-    <!-- 왼쪽 1 -->
-    <a class="download-box" href="2021-6-공통.pdf" download>
-        문제지(공통만)
+    <!-- Row 1 -->
+    <a class="download-box" href="2021-s-공통.pdf" download>
+        문제지(비문학+문학만)
         <span>PDF</span>
     </a>
 
-    <!-- 오른쪽 1 -->
     <a class="download-box" href="2021-s-국어.pdf" download>
         문제지(전체)
         <span>PDF</span>
     </a>
 
-    <!-- 왼쪽 2 -->
-    <a class="download-box" href="2021-s.pdf" download>
+    <!-- Row 2: 정답지 전체 너비 -->
+    <a class="download-box full-width" href="2021-s.pdf" download>
         정답지
-        <span>PDF</span>
+        <span>PDF 다운로드</span>
     </a>
 
-
-    <!-- 왼쪽 3 -->
+    <!-- Row 3 -->
     <a class="download-box" href="2021-s-공통'.pdf" download>
-        해설지(공통만)
+        해설지(비문학+문학만)
         <span>PDF</span>
     </a>
 
-    <!-- 오른쪽 3 -->
     <a class="download-box" href="2021-s-국어'.pdf" download>
         해설지(전체)
         <span>PDF</span>
