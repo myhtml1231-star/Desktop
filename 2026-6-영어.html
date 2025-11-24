@@ -1,66 +1,103 @@
-<div class="audio-player">
-    <audio id="audio" src="https://pub-847376fcebac40e496cc5726d0ff6245.r2.dev/2026-6-듣기.mp3"></audio>
-
-    <button id="playPauseBtn" class="play-btn">
-        ▶️
-    </button>
-
-    <input type="range" id="progress" class="progress" value="0" min="0" max="100">
-</div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>커스텀 플레이어</title>
 
 <style>
-.audio-player {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+    body {
+        margin: 0;
+        background: #f5f7fa;
+        font-family: "Pretendard", sans-serif;
+    }
 
-.play-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: #4e73df;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
+    .player-box {
+        width: 500px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 20px 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 
-.progress {
-    flex: 1;
-}
+    .play-btn {
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: #4d6ff0;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+
+    .play-btn:hover {
+        background: #3f5cd6;
+    }
+
+    .timeline {
+        width: 100%;
+        -webkit-appearance: none;
+        height: 6px;
+        border-radius: 3px;
+        background: #ddd;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .timeline::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0078ff;
+        cursor: pointer;
+    }
 </style>
+</head>
+
+<body>
+
+<div class="player-box">
+    <button class="play-btn" id="playBtn">▶</button>
+    <input type="range" id="timeline" class="timeline" value="0">
+</div>
+
+<audio id="audio" src="2026-6-듣기.mp3"></audio>
 
 <script>
 const audio = document.getElementById("audio");
-const playBtn = document.getElementById("playPauseBtn");
-const progress = document.getElementById("progress");
+const playBtn = document.getElementById("playBtn");
+const timeline = document.getElementById("timeline");
 
-// ▶️ / ⏸ 토글
+// ▶ / ⏸ 토글
 playBtn.addEventListener("click", () => {
     if (audio.paused) {
         audio.play();
         playBtn.textContent = "⏸";
     } else {
         audio.pause();
-        playBtn.textContent = "▶️";
+        playBtn.textContent = "▶";
     }
 });
 
-// 재생시간바 업데이트
+// 타임라인 연동
 audio.addEventListener("timeupdate", () => {
-    progress.value = (audio.currentTime / audio.duration) * 100;
+    timeline.value = (audio.currentTime / audio.duration) * 100;
 });
 
-// 바 끌어서 이동
-progress.addEventListener("input", () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
+// 드래그로 이동
+timeline.addEventListener("input", () => {
+    audio.currentTime = (timeline.value / 100) * audio.duration;
 });
 </script>
+
+</body>
+</html>
