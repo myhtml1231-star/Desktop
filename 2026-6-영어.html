@@ -1,222 +1,189 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>2026학년도 고3 6월 영어 — 다운로드</title>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Pretendard", sans-serif;
-        background: #f5f7fa;
-        text-align: center;
-    }
+  :root{
+    --bg:#f5f7fa; --card:#fff; --muted:#666; --accent:#F4B733; --border:#e6e6e6;
+  }
+  body{margin:0;font-family:"Pretendard","Noto Sans KR",sans-serif;background:var(--bg);color:#222;}
+  header{padding:18px;text-align:center}
+  header img{width:56px;height:auto;display:block;margin:0 auto 8px}
+  h1{font-size:26px;text-align:center;margin:6px 0 18px;font-weight:800}
 
-    .logo {
-        margin-top: 20px;
-        width: 70px;
-        opacity: 0.9;
-    }
-
-    h1 {
-        margin-top: 10px;
-        font-size: 32px;
-        font-weight: 700;
-        color: #222;
-    }
-
-    .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 40px auto;
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .box {
-        flex: 1;
-        background: white;
-        border-radius: 16px;
-        padding: 30px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .title {
-        font-size: 26px;
-        font-weight: 700;
-        margin-bottom: 25px;
-    }
-
-    .item {
-        background: #fff;
-        border-radius: 12px;
-        padding: 18px 22px;
-        margin-bottom: 18px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 18px;
-    }
-
-    .item a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 600;
-    }
-
-    .progress-container {
-        width: 100%;
-        margin: 15px 0;
-    }
-
-    input[type="range"] {
-        width: 100%;
-        -webkit-appearance: none;
-        appearance: none;
-        height: 6px;
-        border-radius: 5px;
-        background: #d3d3d3;
-        outline: none;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 14px;
-        height: 14px;
-        background: #4a90e2;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .audio-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    .audio-buttons button {
-        padding: 8px 16px;
-        border: none;
-        background: #f0f2f5;
-        border-radius: 8px;
-        font-size: 15px;
-        cursor: pointer;
-    }
-
-    .audio-buttons button:hover {
-        background: #e5e7eb;
-    }
-
-    .time-display {
-        margin-top: 10px;
-        font-size: 14px;
-        color: #444;
-    }
-
-    .back-btn {
-        margin: 40px auto;
-        padding: 14px 26px;
-        background: white;
-        border-radius: 12px;
-        display: inline-block;
-        font-size: 18px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        cursor: pointer;
-        text-decoration: none;
-        color: #333;
-    }
+  .main{max-width:1100px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .card{background:var(--card);border-radius:14px;padding:22px;border:1px solid var(--border);box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+  .group-title{font-weight:800;margin-bottom:14px;font-size:18px}
+  .item{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:#fff;margin-bottom:12px;border:1px solid #f0f0f0}
+  .item a{color:#222;text-decoration:none;font-weight:700}
+  /* player */
+  .player-center{text-align:center}
+  .seek{width:100%;-webkit-appearance:none;height:8px;background:#e6e6e6;border-radius:6px;outline:none}
+  .seek::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:var(--accent);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.18);border:2px solid #fff}
+  .controls{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+  .btn{background:#f3f3f3;border:1px solid #ddd;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700}
+  .btn:hover{background:#eee}
+  .speed-btn{padding:6px 10px;border-radius:8px;border:1px solid #e0e0e0;background:#fafafa;cursor:pointer;font-weight:700}
+  .speed-btn.active{background:#fff2d6;border-color:var(--accent)}
+  .time{margin-top:10px;color:var(--muted);font-size:14px}
+  .downloads{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+  .download-link{padding:12px;border-radius:10px;background:#fff;border:1px solid #f0f0f0;text-decoration:none;color:#222;font-weight:700;text-align:center}
+  .back{display:inline-block;margin:28px auto;padding:10px 18px;border-radius:10px;background:#fff;border:1px solid #ddd;text-decoration:none;color:#222;font-weight:700}
+  @media(max-width:900px){.main{grid-template-columns:1fr}.back{margin-bottom:40px}}
 </style>
 </head>
 <body>
 
-<img class="logo" src="logo.png">
+<header>
+  <!-- 네가 올린 로고 파일 경로가 있으면 바꿔써도 돼 -->
+  <img src="Images/logo.png" alt="logo">
+</header>
 
 <h1>2026학년도 고3 6월 영어 — 다운로드</h1>
 
-<div class="container">
+<div class="main">
 
-    <!-- 문항 자료 -->
-    <div class="box">
-        <div class="title">문항 자료</div>
+  <!-- LEFT: 문제 / 정답 / 해설 (박스형) -->
+  <div class="card">
+    <div class="group-title">문항 자료</div>
 
-        <div class="item"><span>문제지</span><a href="files/problem.pdf" download>PDF 다운로드</a></div>
-        <div class="item"><span>정답지</span><a href="files/answer.pdf" download>PDF 다운로드</a></div>
-        <div class="item"><span>해설지</span><a href="files/solution.pdf" download>PDF 다운로드</a></div>
+    <div class="item">
+      <div>문제지</div>
+      <a href="Files/problem.pdf" download>PDF 다운로드</a>
     </div>
 
-    <!-- 듣기 자료 -->
-    <div class="box">
-        <div class="title">듣기 자료</div>
-
-        <div class="item" style="flex-direction: column; align-items: center;">
-            <div><strong>듣기 재생</strong></div>
-
-            <audio id="player" src="sandbox:/mnt/data/2026-6-듣기.mp3"></audio>
-
-            <div class="progress-container">
-                <input type="range" id="progressBar" min="0" value="0" step="1">
-                <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
-            </div>
-
-            <div class="audio-buttons">
-                <button onclick="skip(-10)">⏪ -10s</button>
-                <button onclick="playAudio()">▶ 재생</button>
-                <button onclick="pauseAudio()">⏸ 정지</button>
-                <button onclick="skip(10)">+10s ⏩</button>
-            </div>
-
-            <div class="audio-buttons">
-                <button onclick="setSpeed(0.5)">0.5x</button>
-                <button onclick="setSpeed(0.75)">0.75x</button>
-                <button onclick="setSpeed(1)">1.0x</button>
-                <button onclick="setSpeed(1.25)">1.25x</button>
-                <button onclick="setSpeed(1.5)">1.5x</button>
-                <button onclick="setSpeed(2)">2.0x</button>
-            </div>
-        </div>
-
-        <div class="item"><span>듣기 파일</span><a href="audio/listening.mp3" download>mp3 다운로드</a></div>
-        <div class="item"><span>듣기 대본</span><a href="files/script.pdf" download>PDF 다운로드</a></div>
+    <div class="item">
+      <div>정답지</div>
+      <a href="Files/answer.pdf" download>PDF 다운로드</a>
     </div>
+
+    <div class="item">
+      <div>해설지</div>
+      <a href="Files/solution.pdf" download>PDF 다운로드</a>
+    </div>
+  </div>
+
+  <!-- RIGHT: 듣기 박스 (파일은 업로드한 샌드박스 경로 사용) -->
+  <div class="card">
+    <div class="group-title">듣기 자료</div>
+
+    <div class="player-center">
+      <!-- 여기 src에 네 파일 경로 사용 -->
+      <audio id="audio" preload="metadata" src="sandbox:/mnt/data/2026-6-듣기.mp3"></audio>
+
+      <!-- 재생바 (드래그 가능) -->
+      <input id="seek" class="seek" type="range" min="0" max="100" value="0" step="0.1">
+
+      <!-- 컨트롤 -->
+      <div class="controls">
+        <button class="btn" id="back10">⏪ -10s</button>
+        <button class="btn" id="play">▶ 재생</button>
+        <button class="btn" id="pause">⏸ 정지</button>
+        <button class="btn" id="fwd10">+10s ⏩</button>
+      </div>
+
+      <!-- 배속 -->
+      <div style="margin-top:10px" class="controls" id="speeds">
+        <button class="speed-btn" data-speed="0.5">0.5x</button>
+        <button class="speed-btn" data-speed="0.75">0.75x</button>
+        <button class="speed-btn active" data-speed="1">1.0x</button>
+        <button class="speed-btn" data-speed="1.25">1.25x</button>
+        <button class="speed-btn" data-speed="1.5">1.5x</button>
+        <button class="speed-btn" data-speed="2">2.0x</button>
+      </div>
+
+      <div class="time" id="time">00:00 / 00:00</div>
+
+      <div class="downloads">
+        <a class="download-link" href="sandbox:/mnt/data/2026-6-듣기.mp3" download>듣기 파일 다운로드</a>
+        <a class="download-link" href="Files/script.pdf" download>듣기 대본 다운로드</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<a class="back-btn" href="#">← 이전 화면으로 돌아가기</a>
+<div style="text-align:center;">
+  <a class="back" href="index.html">← 이전 화면으로 돌아가기</a>
+</div>
 
 <script>
-const audio = document.getElementById("player");
-const progress = document.getElementById("progressBar");
-const timeDisplay = document.getElementById("timeDisplay");
+  // Elements
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('play');
+  const pauseBtn = document.getElementById('pause');
+  const back10 = document.getElementById('back10');
+  const fwd10 = document.getElementById('fwd10');
+  const seek = document.getElementById('seek');
+  const timeEl = document.getElementById('time');
+  const speedBtns = document.querySelectorAll('.speed-btn');
 
-audio.addEventListener("loadedmetadata", () => {
-    progress.max = Math.floor(audio.duration);
-});
+  // format mm:ss
+  function fmt(t){
+    if(!isFinite(t) || t <= 0) return '00:00';
+    const m = Math.floor(t/60).toString().padStart(2,'0');
+    const s = Math.floor(t%60).toString().padStart(2,'0');
+    return `${m}:${s}`;
+  }
 
-audio.addEventListener("timeupdate", () => {
-    progress.value = Math.floor(audio.currentTime);
-    timeDisplay.textContent =
-        formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
-});
+  // loaded metadata -> set max and display duration quickly
+  audio.addEventListener('loadedmetadata', () => {
+    seek.max = Math.floor(audio.duration || 0);
+    timeEl.textContent = fmt(0) + ' / ' + fmt(audio.duration || 0);
+  });
 
-progress.addEventListener("input", () => {
-    audio.currentTime = progress.value;
-});
+  // update time & seek as audio plays
+  audio.addEventListener('timeupdate', () => {
+    if(isFinite(audio.duration)){
+      seek.value = audio.currentTime;
+      timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+    } else {
+      timeEl.textContent = fmt(audio.currentTime) + ' / 00:00';
+    }
+  });
 
-function playAudio() { audio.play(); }
-function pauseAudio() { audio.pause(); }
-function skip(sec) { audio.currentTime += sec; }
-function setSpeed(speed) { audio.playbackRate = speed; }
+  // play / pause / skip
+  playBtn.addEventListener('click', ()=> audio.play());
+  pauseBtn.addEventListener('click', ()=> audio.pause());
+  back10.addEventListener('click', ()=> audio.currentTime = Math.max(0, audio.currentTime - 10));
+  fwd10.addEventListener('click', ()=> audio.currentTime = Math.min(audio.duration || Infinity, audio.currentTime + 10));
 
-function formatTime(sec) {
-    if (isNaN(sec)) return "00:00";
-    let m = Math.floor(sec / 60);
-    let s = Math.floor(sec % 60);
-    return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
-}
+  // seek dragging
+  let isSeeking = false;
+  seek.addEventListener('input', ()=> {
+    isSeeking = true;
+    audio.currentTime = seek.value;
+  });
+  seek.addEventListener('change', ()=> { isSeeking = false; });
+
+  // speed buttons
+  speedBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const s = parseFloat(btn.dataset.speed);
+      audio.playbackRate = s;
+      speedBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // keyboard shortcuts: space toggle, arrows skip 5s
+  document.addEventListener('keydown', (e)=>{
+    if(e.code === 'Space' && document.activeElement.tagName !== 'INPUT'){
+      e.preventDefault();
+      audio.paused ? audio.play() : audio.pause();
+    } else if(e.code === 'ArrowLeft'){
+      audio.currentTime = Math.max(0, audio.currentTime - 5);
+    } else if(e.code === 'ArrowRight'){
+      audio.currentTime = Math.min(audio.duration || Infinity, audio.currentTime + 5);
+    }
+  });
+
+  // small fallback to try show duration quickly
+  setTimeout(()=> {
+    if(isFinite(audio.duration)) timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+  }, 300);
 </script>
-
 </body>
 </html>
