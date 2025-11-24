@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>2026학년도 고3 6월 영어 — 다운로드</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Pretendard", sans-serif;
+        background: #f5f7fa;
+        text-align: center;
+    }
+
+    .logo {
+        margin-top: 20px;
+        width: 70px;
+        opacity: 0.9;
+    }
+
+    h1 {
+        margin-top: 10px;
+        font-size: 32px;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .box {
+        flex: 1;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    .item {
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px 22px;
+        margin-bottom: 18px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .item a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+    }
+
+    /* 재생바 */
+    .progress-container {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    input[type="range"] {
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 6px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        background: #4a90e2;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .audio-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .audio-buttons button {
+        padding: 8px 16px;
+        border: none;
+        background: #f0f2f5;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .audio-buttons button:hover {
+        background: #e5e7eb;
+    }
+
+    .time-display {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    .back-btn {
+        margin: 40px auto;
+        padding: 14px 26px;
+        background: white;
+        border-radius: 12px;
+        display: inline-block;
+        font-size: 18px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        text-decoration: none;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<img class="logo" src="logo.png">
+
+<h1>2026학년도 고3 6월 영어 — 다운로드</h1>
+
+<div class="container">
+
+    <!-- 문항 자료 -->
+    <div class="box">
+        <div class="title">문항 자료</div>
+
+        <div class="item"><span>문제지</span><a href="files/problem.pdf" download>PDF 다운로드</a></div>
+        <div class="item"><span>정답지</span><a href="files/answer.pdf" download>PDF 다운로드</a></div>
+        <div class="item"><span>해설지</span><a href="files/solution.pdf" download>PDF 다운로드</a></div>
+    </div>
+
+    <!-- 듣기 자료 -->
+    <div class="box">
+        <div class="title">듣기 자료</div>
+
+        <div class="item" style="flex-direction: column; align-items: center;">
+            <div><strong>듣기 재생</strong></div>
+
+            <audio id="audioPlayer" src="2026-6-듣기.mp3"></audio>
+
+            <!-- 재생 시간바 -->
+            <div class="progress-container">
+                <input type="range" id="progressBar" min="0" value="0" step="1"> <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+                  
+ </div>
+
+            <div class="audio-buttons">
+                <button onclick="skip(-10)">⏪ -10s</button>
+                <button onclick="playAudio()">▶ 재생</button>
+                <button onclick="pauseAudio()">⏸ 정지</button>
+                <button onclick="skip(10)">+10s ⏩</button>
+            </div>
+
+            <!-- 배속 버튼 -->
+            <div class="audio-buttons">
+                <button onclick="setSpeed(0.5)">0.5x</button>
+                <button onclick="setSpeed(0.75)">0.75x</button>
+                <button onclick="setSpeed(1)">1.0x</button>
+                <button onclick="setSpeed(1.25)">1.25x</button>
+                <button onclick="setSpeed(1.5)">1.5x</button>
+                <button onclick="setSpeed(2)">2.0x</button>
+            </div>
+</div>
+           
+
+        <div class="item"><span>듣기 파일</span><a href="audio/listening.mp3" download>mp3 다운로드</a></div>
+        <div class="item"><span>듣기 대본</span><a href="files/script.pdf" download>PDF 다운로드</a></div>
+    </div>
+</div>
+
+<a class="back-btn" href="#">← 이전 화면으로 돌아가기</a>
+
+<script>
+const audio = document.getElementById("audioPlayer");
+const progress = document.getElementById("progressBar");
+const timeDisplay = document.getElementById("timeDisplay");
+
+audio.addEventListener("loadedmetadata", () => {
+    progress.max = Math.floor(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+    progress.value = Math.floor(audio.currentTime);
+    timeDisplay.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+});
+
+/* 드래그하여 변경 */
+progress.addEventListener("input", () => {
+    audio.currentTime = progress.value;
+});
+
+function playAudio() { audio.play(); }
+function pauseAudio() { audio.pause(); }
+function skip(sec) { audio.currentTime += sec; }
+function setSpeed(speed) { audio.playbackRate = speed; }
+
+function formatTime(sec) {
+    if (isNaN(sec)) return "00:00";
+    let m = Math.floor(sec / 60);
+    let s = Math.floor(sec % 60);
+    return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
+</script>
+
+</body>
+</html>
