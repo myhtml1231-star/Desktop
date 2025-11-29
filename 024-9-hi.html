@@ -1,0 +1,113 @@
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="language" content="ko">
+<meta name="format-detection" content="telephone=no">
+<meta id="viewport" name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, minimum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+
+<link type="text/css" rel="stylesheet" href="/ebs/public_hsp/css/common.css">
+<link type="text/css" rel="stylesheet" href="/ebs/public_hsp/css/layout.css">
+<link type="text/css" rel="stylesheet" href="/ebs/public_hsp/css/board.css">
+<link type="text/css" rel="stylesheet" href="/ebs/public_hsp/css/librarys.css">
+
+<script type="text/javascript" src="https://www.ebsi.co.kr/ebs/public_hsp/js/ebs/wlo.js"></script><script type="text/javascript" src="/ebs/public_hsp/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/ebs/public_hsp/js/ui_librarys.js"></script>
+<script type="text/javascript" src="/ebs/public_hsp/js/ui_common.js"></script>
+
+<title></title>
+</head>
+
+<body class="dv_chrome dv_chrome142 dv_windows dv_windows10 dv_pc" scroll="auto" style="overflow-x: hidden;">
+
+
+<div class="wrap">
+	
+	<!-- container -->
+	<section class="container">
+		
+		<!-- sub_container -->
+		<div class="sub_container">
+		
+			<script type="text/javascript">
+	function Request() {
+		var requestParam = "";
+
+		//getParameter 펑션
+		this.getParameter = function(param) {
+			//현재 주소를 decoding
+			var url = unescape(location.href);
+			//파라미터만 자르고, 다시 &그분자를 잘라서 배열에 넣는다. 
+			var paramArr = (url.substring(url.indexOf("?") + 1, url.length)).split("&");
+
+			for (var i = 0; i < paramArr.length; i++) {
+				var temp = paramArr[i].split("="); //파라미터 변수명을 담음
+
+				if (temp[0].toUpperCase() == param.toUpperCase()) {
+					// 변수명과 일치할 경우 데이터 삽입
+					requestParam = paramArr[i].split("=")[1];
+					break;
+				}
+			}
+			return requestParam;
+		}
+	}
+
+	jQuery(document).ready(function() {
+		jQuery('body').attr('scroll', 'auto').css('overflow-x', 'hidden');
+		
+		var data = '{imageSrc=https://wdown.ebsi.co.kr/W61001/01exam/20240904/mobile/h2_m_s_his_1_ans_377RN589.png}';
+		var imageSrc2 = 'https://wdown.ebsi.co.kr/W61001/01exam/20240904/mobile/h2_m_s_his_1_ans_377RN589.png';
+		
+		var request = new Request();
+		// 파라메터 값 얻기
+		var subjectNm = request.getParameter("subjectNm");
+		var imageSrc = request.getParameter("imageSrc");
+		
+
+		jQuery('#subjNmArea').text(subjectNm);
+		jQuery('#imgArea').html('<img src="' +imageSrc2 +'" />');
+
+		self.focus();
+	});
+</script>
+<div>
+	<h4 id="subjNmArea"></h4>
+</div>
+<div id="imgArea"><img src="https://wdown.ebsi.co.kr/W61001/01exam/20240904/mobile/h2_m_s_his_1_ans_377RN589.png"></div></div>
+		<!-- //sub_container -->
+
+	</section>
+	<!-- container //-->
+
+</div>
+<!-- wrap -->	
+
+<!-- WISELOG ONLINE TRACKING SCRIPT CODE START -->
+<!-- DO NOT MODIFY THIS SCRIPT CODE. -->
+<!-- COPYRIGHT (C) 1999-2013 NETHRU INC. ALL RIGHTS RESERVED. -->
+
+<script type="text/javascript">
+	(function() {
+	var nl = document.createElement('script'); nl.type = 'text/javascript';
+	nl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.ebsi.co.kr/ebs/public_hsp/js/ebs/wlo.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(nl, s);
+	var done = false;
+	nl.onload = nl.onreadystatechange = function() {
+	if ( !done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
+	done = true;
+	_n_sid = "www.ebsi.co.kr";
+	//_n_uid_cookie = "UID";
+	_n_p1 = 'high3';
+	_n_p5 = 'web';
+	n_logging();
+	nl.onload = nl.onreadystatechange = null;
+	}}})();
+	</script>
+
+<!-- WISELOG ONLINE TRACKING SCRIPT CODE END -->
+
+<!-- Google Analytic Code Start -->
+<!-- Google Analytic Code End -->
+
+</body></html>
